@@ -1,4 +1,6 @@
 {
     "git.ignoreLimitWarning": true,
-    "prettier.singleAttributePerLine": true
+    "prettier.singleAttributePerLine": true,
+    "editor.defaultFormatter": null,
+    "vs-code-prettier-eslint.prettierLast": false
 }

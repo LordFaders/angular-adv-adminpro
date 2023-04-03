@@ -1,1 +1,53 @@
-<p>grafica1 works!</p>
+<div class="container-fluid">
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="card card-danger">
+                <div class="card-header">
+                    <h3 class="card-title">Donut Chart</h3>
+                </div>
+                <div class="card-body">
+                    <app-dona [title]="'Ventas'" [label]="label1" [data]="data1" [backgroundColor]="backgroundColor1"></app-dona>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card card-danger">
+                <div class="card-header">
+                    <h3 class="card-title">Donut Chart</h3>
+                </div>
+                <div class="card-body">
+                    <app-dona [title]="'Compras'" [label]="label2" [data]="data2" [backgroundColor]="backgroundColor2"></app-dona>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="card card-danger">
+                <div class="card-header">
+                    <h3 class="card-title">Donut Chart</h3>
+                </div>
+                <div class="card-body">
+                    <app-dona [title]="'Cambios'" [label]="label3" [data]="data3" [backgroundColor]="backgroundColor3"></app-dona>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card card-danger">
+                <div class="card-header">
+                    <h3 class="card-title">Donut Chart</h3>
+                </div>
+                <div class="card-body">
+                    <app-dona [title]="'Compras 2'"></app-dona>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
