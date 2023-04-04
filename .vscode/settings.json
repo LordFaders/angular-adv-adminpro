@@ -2,5 +2,8 @@
     "git.ignoreLimitWarning": true,
     "prettier.singleAttributePerLine": true,
     "editor.defaultFormatter": null,
-    "vs-code-prettier-eslint.prettierLast": false
+    "vs-code-prettier-eslint.prettierLast": false,
+    "[typescript]": {
+        "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+    }
 }
