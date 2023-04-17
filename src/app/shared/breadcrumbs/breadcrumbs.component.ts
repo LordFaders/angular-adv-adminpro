@@ -27,7 +27,7 @@ export class BreadcrumbsComponent implements OnDestroy {
   }
 
   getDataRuta(){
-   return this.router.events
+  return this.router.events
     .pipe(
       filter( (event): event is ActivationEnd => event instanceof ActivationEnd ),
       filter( (event: ActivationEnd ) => event.snapshot.firstChild === null),
