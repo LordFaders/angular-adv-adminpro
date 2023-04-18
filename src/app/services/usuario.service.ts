@@ -8,20 +8,31 @@ import { environment } from 'src/environments/environment.development';
 
 import { RegisterForm } from '../interfaces/register-form.interface';
 import { LoginForm } from '../interfaces/login-form.interface';
-
-declare const google: any;
-
+import { Usuario } from '../models/usuario.model';
 
 const base_url = environment.base_url;
+
+declare const google: any;
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
 
+  public usuario!: Usuario;
+
   constructor( private http: HttpClient,
                 private router: Router,
                 private ngZone: NgZone) { }
+
+  
+  get token(): string {
+    return localStorage.getItem('token') || '';
+  }
+
+  get uid(): string {
+    return this.usuario.uid || '';
+  }
 
   logout(){
     localStorage.removeItem('token');
@@ -36,17 +47,22 @@ export class UsuarioService {
 
 
   validarToken():Observable<boolean>{
-    const token =  localStorage.getItem('token') || '';
+
+    google.accounts.id.initialize({
+      client_id: '893111458107-7ag0lsb8uar91tbasslktbmfpl622q7b.apps.googleusercontent.com'
+    });
 
     return this.http.get(`${base_url}/login/renew`, {
       headers: {
-        'x-token': token
+        'x-token': this.token
       }
     }).pipe(
-      tap( (res: any ) => {
+      map( (res: any ) => {
+        const{email, google, nombre, role, img = '', uid} = res.usuario;
+        this.usuario = new Usuario(nombre, email, '', img, google, role, uid);
         localStorage.setItem('token', res.token);
+        return true;
       }),
-      map( resp => true ),
       catchError( error => of(false)) // of crea un observable en base al valor que se le entrega
     );
   }
@@ -60,6 +76,20 @@ export class UsuarioService {
         localStorage.setItem('token', resp.token)
       })
     )
+  }
+
+  actualizarPerfil( data: {email:string, nombre:string, role: string}){
+
+    data = {
+      ...data,
+      role: this.usuario.role!
+    };
+
+    return this.http.put(`${base_url}/usuarios/${this.uid}`, data, {
+      headers: {
+        'x-token': this.token
+      }
+    });
   }
 
 

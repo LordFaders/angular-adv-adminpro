@@ -18,7 +18,6 @@ export class LoginComponent implements OnInit, AfterViewInit {
   @ViewChild('googleBtn') googleBtn!: ElementRef;
 
   public formSubmitted = false;
-  public auth2: any;
   
 
   public loginForm: FormGroup = this.fb.group({
