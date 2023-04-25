@@ -19,7 +19,7 @@ export class PerfilComponent implements OnInit {
   public perfilForm!: FormGroup;
   public usuario!: Usuario;
   public imagenSubir!: File;
-  public imgTemp: any;
+  public imgTemp: any = null;
 
   constructor(private fb: FormBuilder,
               private usuarioService: UsuarioService,
