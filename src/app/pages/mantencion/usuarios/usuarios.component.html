@@ -42,7 +42,7 @@
                         <tbody>
                             <tr *ngFor="let usuario of usuarios">
                                 <td class="text-center">
-                                    <img [src]="usuario.imagenUrl" alt="Imagen de usuario" class="avatar cursor" (click)="abrirModal(usuario)">
+                                    <img [src]="usuario.imagenUrl" alt="Imagen de usuario" class="avatar cursor" (click)="abrirModal(usuario)" data-toggle="tooltip" title="Editar imagen">
                                 </td>
                                 <td>{{usuario.email}}</td>
                                 <td>{{usuario.nombre}}</td>
@@ -58,7 +58,7 @@
                                 </td>
 
                                 <td class="text-nowrap text-center">
-                                    <a data-toggle="tooltip" data-original-title="Borrar" (click)="eliminarUsuario(usuario)" class="cursor"> <i class="fa fa-close text-danger"></i> </a>
+                                    <a data-toggle="tooltip" title="Borrar" (click)="eliminarUsuario(usuario)" class="cursor"> <i class="fa fa-close text-danger"></i> </a>
                                 </td>
                             </tr>
                         </tbody>

@@ -18,7 +18,7 @@ import { Subscription } from 'rxjs';
 export class UsuariosComponent implements OnInit, OnDestroy {
 
   public totalUsuarios: number = 0;
-  public usuarios: Usuario[] = [];
+  public usuarios: any[] = [];
   public usuariosTemp: Usuario[] = [];
 
   public imgSubs!: Subscription;

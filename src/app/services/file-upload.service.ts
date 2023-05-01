@@ -11,7 +11,7 @@ export class FileUploadService {
   constructor() { }
 
 
- async actualizarFoto(archivo: File, 
+async actualizarFoto(archivo: File, 
                       tipo: 'usuarios' | 'medicos' | 'hospitales', 
                       id:string){
 

@@ -31,7 +31,7 @@ use profile section
 ******************/
 
 .sidebar-nav .user-profile {
-    > a {
+    >a {
         img {
             width: 30px;
             border-radius: 100%;
@@ -113,7 +113,7 @@ sidebar navigation
             }
         }
     }
-    > ul > li > a {
+    >ul>li>a {
         i {
             width: 31px;
             font-size: 24px;
@@ -131,9 +131,9 @@ sidebar navigation
             color: $themecolor-alt;
         }
     }
-    > ul > li {
+    >ul>li {
         margin-bottom: 5px;
-        &.active > a {
+        &.active>a {
             color: $themecolor;
             font-weight: 500;
             i {
@@ -174,8 +174,8 @@ sidebar navigation
     }
 }
 
-.sidebar-nav .active > .has-arrow::after,
-.sidebar-nav li > .has-arrow.active::after,
+.sidebar-nav .active>.has-arrow::after,
+.sidebar-nav li>.has-arrow.active::after,
 .sidebar-nav .has-arrow[aria-expanded="true"]::after {
     -webkit-transform: rotate(-135deg) translate(0, -50%);
     -ms-transform: rotate(-135deg) translate(0, -50%);
@@ -194,7 +194,7 @@ When click on sidebar toggler and also for tablet
     .mini-sidebar .sidebar-nav #sidebarnav li {
         position: relative;
     }
-    .mini-sidebar .sidebar-nav #sidebarnav > li > ul {
+    .mini-sidebar .sidebar-nav #sidebarnav>li>ul {
         position: absolute;
         left: 70px;
         top: 46px;
@@ -214,22 +214,22 @@ When click on sidebar toggler and also for tablet
     .mini-sidebar.fix-sidebar .left-sidebar {
         position: fixed;
     }
-    .mini-sidebar .sidebar-nav #sidebarnav > li:hover > ul {
+    .mini-sidebar .sidebar-nav #sidebarnav>li:hover>ul {
         height: auto !important;
         overflow: auto;
     }
-    .mini-sidebar .sidebar-nav #sidebarnav > li:hover > ul,
-    .mini-sidebar .sidebar-nav #sidebarnav > li:hover > ul.collapse {
+    .mini-sidebar .sidebar-nav #sidebarnav>li:hover>ul,
+    .mini-sidebar .sidebar-nav #sidebarnav>li:hover>ul.collapse {
         display: block;
     }
-    .mini-sidebar .sidebar-nav #sidebarnav > li > a.has-arrow:after {
+    .mini-sidebar .sidebar-nav #sidebarnav>li>a.has-arrow:after {
         display: none;
     }
     .mini-sidebar {
         .left-sidebar {
             width: 70px;
         }
-        .sidebar-nav #sidebarnav .user-profile >a {
+        .sidebar-nav #sidebarnav .user-profile>a {
             padding: 12px 20px;
         }
         .scroll-sidebar {
@@ -249,11 +249,11 @@ When click on sidebar toggler and also for tablet
         .sidebar-nav {
             background: transparent;
         }
-        .sidebar-nav #sidebarnav > li > a {
+        .sidebar-nav #sidebarnav>li>a {
             padding: 12px 24px;
             width: 70px;
         }
-        .sidebar-nav #sidebarnav > li:hover > a {
+        .sidebar-nav #sidebarnav>li:hover>a {
             width: 290px;
             background: $sidebar-alt;
             .hide-menu {
