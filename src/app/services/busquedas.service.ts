@@ -36,11 +36,15 @@ private transformarUsuarios(resultados: any[]): Usuario[]{
 private transformarHospitales(resultados: any[]): Hospital[]{
   return resultados;
 }
+
 private transformarMedicos(resultados: any[]): Medico[]{
   return resultados;
 }
 
-
+busquedaGlobal(termino: string){
+  const url = `${base_url}/todo/${termino}`;
+  return this.http.get(url, this.headers);
+}
 
 buscar( 
   tipo: 'usuarios' | 'medicos' | 'hospitales',
